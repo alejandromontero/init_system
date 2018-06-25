@@ -1,0 +1,57 @@
+set nocompatible             
+filetype off                  
+syntax enable
+
+" Plguin controller
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+"Start Plugin list
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'junegunn/goyo.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'Yggdroot/indentLine'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'valloric/youcompleteme'
+
+"End Plugin list
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+"Toggles
+map <F9> :NERDTreeToggle<CR>
+map <F10> :SyntasticCheck<CR>
+
+"Syntax check
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_check_on_open=0
+let g:syntastic_check_on_wq=0
+let g:syntastic_python_checkers = ['pylint']
+
+"Identation
+let g:indentLine_enabled=1
+set autoindent 
+
+"Line numbers
+set number
+
+"Style
+set t_Co=16
+if has ('gui_running')
+	set background=dark
+	colorscheme solarized
+else
+	set background=dark
+	colorscheme default
+endif
+
+"Python settings 
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set smarttab

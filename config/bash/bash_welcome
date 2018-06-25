@@ -1,0 +1,23 @@
+#welcome message
+printf "\n\e[0;33m%s\n" '========================================================================
+------------------------------             .-;+$XHHHHHHX$+;-.
+BLACK MESA INFORMATION SYSTEMS          ,;X@@X%/;=----=:/%X@@X/
+------------------------------        =$@@%=.              .=+H@X:
+    LAMBDA CORE MAINFRAME           -XMX:                      =XMX=
+     SECURE SHELL ACCESS           /@@:                          =H@+
+                                  %@X,                            .$@$
+MAINFRAME ACCESS IS RESTRICTED   +@X.                               $@%
+TO LEVEL 3 TECHNICAL PERSONNEL  -@@,                                .@@=
+ALL SERVER ACCESS IS MONITORED  %@%                                  +@$
+                                H@:                                  :@H
+PLEASE REVIEW SECTIONS 7-15 OF  H@:         :HHHHHHHHHHHHHHHHHHX,    =@H
+THE SYSTEMS ACCESS AGREEMENT    %@%         ;@M@@@@@@@@@@@@@@@@@H-   +@$
+                                =@@,        :@@@@@@@@@@@@@@@@@@@@@= .@@:
+        (C) 1998-2001            +@X        :@@@@@@@@@@@@@@@M@@@@@@:%@%
+   BLACK MESA SOURCE SYSTEMS      $@$,      ;@@@@@@@@@@@@@@@@@M@@@@@@$.
+      ALL RIGHTS RESERVED          +@@HHHHHHH@@@@@@@@@@@@@@@@@@@@@@@+
+                                    =X@@@@@@@@@@@@@@@@@@@@@@@@@@@@X=
+                                      :$@@@@@@@@@@@@@@@@@@@M@@@@$:
+                                        ,;$@@@@@@@@@@@@@@@@@@X/-
+                                           .-;+$XXHHHHHX$+;-.
+========================================================================'

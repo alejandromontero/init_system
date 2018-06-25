@@ -1,0 +1,52 @@
+# .bashrc
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+fi
+
+# Colors
+export BLACK='\e[0;30m'
+export RED='\e[0;31m'
+export GREEN='\e[0;32m'
+export YELLOW='\e[0;33m'
+export BLUE='\e[0;34m'
+export PURPLE='\e[0;35m'
+export CYAN='\e[0;36m'
+export WHITE='\e[0;38m'
+
+# Welcome message
+if [ -f "$HOME/.bash_welcome" ]; then source "$HOME/.bash_welcome"; fi
+
+# Prompt config
+PROMPT_DIRTRIM=2
+if [ $(whoami) = "root" ]; then USER_COLOR=$RED && echo -e "$RED\nYOU ARE ACCESSING AS ROOT; WITH GREAT POWER COMES GREAT RESPONSABILITY$WHITE\n"; else USER_COLOR=$GREEN; fi
+export PS1="\[$BLUE\][\[$CYAN\]\t\[$BLUE\]] \[$BLUE\][\[$USER_COLOR\]\u\[$GREEN\]@\h\[$BLUE\]] \[$BLUE\][\[$YELLOW\]\w\[$BLUE\]]\[$WHITE\] \$ "
+
+#Bluetooth on fedora for headsets
+#echo "options iwlwifi bt_coex_active=0" | sudo tee -a /etc/modprobe.d/iwlwifi.conf
+
+# Man highlighting 
+export LESS_TERMCAP_mb=$'\e[01;31m'       # begin blinking
+export LESS_TERMCAP_md=$'\e[01;33;5;74m'  # begin bold
+export LESS_TERMCAP_me=$'\e[1m'           # end mode
+export LESS_TERMCAP_se=$'\e[0m'           # end standout-mode
+export LESS_TERMCAP_so=$'\e[33;5;246m'    # begin standout-mode - info box
+export LESS_TERMCAP_ue=$'\e[0m'           # end underline
+export LESS_TERMCAP_us=$'\e[04;38;5;146m' # begin underline
+
+export VAGRANT_DEFAULT_PROVIDER=virtualbox
+export SHELL=/bin/bash
+
+# Personal functions
+
+#$1 folder inside /users/scratch/pristine/share/branches/alejandro where to store aloja
+function rsync_minerva() {
+	if [ $1 ] ; then
+		ssh minerva-102 "mkdir -p /users/scratch/pristine/share/branches/alejandro/$1" &>/dev/null 
+		rsync -avur /home/alejandro/Documentos/projects/aloja/ "minerva-102:/users/scratch/pristine/share/branches/alejandro/$1"	
+	else
+		rsync -avur /home/alejandro/Documentos/projects/aloja/ minerva-102:/users/scratch/pristine/share/branches/alejandro/aloja
+	fi
+}
+
+function cl() { cd "$@" && ls; }
